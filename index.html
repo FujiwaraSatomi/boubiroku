@@ -36,8 +36,21 @@
     </div>
     <div class="main-box">
       <h3>記事一覧</h3>
-      <span></span>
+      <div id="article_list"></div>
     </div>
+    <script>
+      fetch("https://raw.githubusercontent.com/yuzupon1133/boubiroku/main/assets/article_list")
+      .then(res => res.json())
+      .then(res => {
+        let article_list = document.getElementById("article_list");
+        for(let i = 0; i < res.length; i++) {
+          let doc = docment.createElement("a");
+          doc.setAttribute("href", "https://yuzupon1133.github.io/boubiroku/article/?id=" + res[i].id);
+          doc.innerHTML = res[i].title;
+          article_list.append(doc);
+        }
+      })
+    </script>
   </div>
 
   <footer>
