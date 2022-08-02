@@ -44,7 +44,7 @@
       .then(res => {
         let article_list = document.getElementById("article_list");
         for(let i = 0; i < res.length; i++) {
-          let doc = docment.createElement("a");
+          let doc = document.createElement("a");
           doc.setAttribute("href", "https://yuzupon1133.github.io/boubiroku/article/?id=" + res[i].id);
           doc.innerHTML = res[i].title;
           article_list.append(doc);
