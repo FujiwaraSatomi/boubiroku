@@ -193,7 +193,7 @@ i.margin-right {
 }
 .main-article {
   min-height: 1000px;
-  width: 45vw;
+  width: 70vw;
   background-color: white;
   padding: 15px;
 }
@@ -452,24 +452,4 @@ table, thead, tbody, tfoot, tr, th, td {
 #article-submit:hover {
   background-color: #4ce041;
   color: white;
-}
-
-.comment hr {
-  margin: 40px 0;
-}
-.comment textarea {
-  width: 450px;
-  height: 130px;
-  min-height: 130px;
-  resize: vertical;
-}
-.comment input[type="text"] {
-  width: 450px;
-  height: 20px;
-  margin: 10px 0;
-}
-.comment input[type="button"] {
-  width: 100px;
-  height: 30px;
-  margin: 10px 0;
 }
