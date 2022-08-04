@@ -72,32 +72,19 @@
       datetemp.setHours(datetemp.getHours() + (new Date()).getTimezoneOffset() / -60)
       return datetemp.toISOString().replace(/([0-9\-]+)T([0-9:]+)\..+/, "$1 $2");
     }
-    let locate_match = location.href.match(/^https:\/\/yuzupon1133\.github\.io\/boubiroku\/article\/(\d+)(?:[?#][^\/]*)?$/);
-    if(locate_match) {
-      fetch("https://raw.githubusercontent.com/yuzupon1133/boubiroku/main/assets/article/" + locate_match[1])
+    if(param["q"]) {
+      param["q"] = param["q"].replace("+", "");
+      fetch("https://raw.githubusercontent.com/yuzupon1133/boubiroku/main/assets/article_list")
       .then(res => res.json())
       .then(res => {
-        document.getElementById("article").innerHTML = marked.parse(res.raw);
-        document.getElementById("article-title").innerHTML = res.title;
-        document.getElementById("article-tag").innerHTML = res.tag;
-        document.getElementById("article-tagicon").style.display = "block";
-        document.getElementById("article-date").innerHTML = unix2date(res.createtime).replace(/([0-9\-]+) .+/, "$1");
-        document.getElementById("article-date").setAttribute("title", unix2date(res.createtime));
-        document.getElementById("article-edit").innerHTML = unix2date(res.edittime).replace(/([0-9\-]+) .+/, "$1");
-        document.getElementById("article-edit").setAttribute("title", unix2date(res.edittime));
-        document.title = res.title + " | ただの忘備録";
+        document.title = param["q"] + "の検索結果 | ただの忘備録";
       })
       .catch(e => {
-        document.getElementById("article-title").innerHTML = "お探しのページは見つかりませんでした。";
+        document.getElementById("article-title").innerHTML = "エラーが発生しました。";
         document.getElementById("article").innerHTML = "";
         document.getElementById("article-tagicon").style.display = "none";
-        document.title = "ページが見つかりません | ただの忘備録";
+        document.title = "エラーが発生しました | ただの忘備録";
       });
-    } else {
-      document.getElementById("article-title").innerHTML = "お探しのページは見つかりませんでした。";
-      document.getElementById("article").innerHTML = "";
-      document.getElementById("article-tagicon").style.display = "none";
-      document.title = "ページが見つかりません | ただの忘備録";
     }
   </script>
 </body>
