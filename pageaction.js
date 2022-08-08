@@ -20,6 +20,18 @@ const param = (() => {
   return null;
 })();
 
+const resizeWindow = (e) => {
+  let wide_elm = document.getElementById("navbar-wide-width");
+  let narrow_elm = document.getElementById("navbar-narrow-width");
+  if(e.width <= 640) {
+    wide_elm.style.display = "none";
+    narrow_elm.style.display = "block";
+  } else {
+    wide_elm.style.display = "block";
+    narrow_elm.style.display = "none";
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("scroll", () => {
     var nav = document.getElementsByTagName("nav")[0];
@@ -29,4 +41,5 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.add("onscroll");
     }
   });
+  document.addEventListener("resize", resizeWindow);
 );
