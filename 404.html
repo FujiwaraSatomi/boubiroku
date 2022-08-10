@@ -3,14 +3,17 @@
 <head>
   <meta charset="utf-8">
   <title>ただの忘備録</title>
-  <link rel="stylesheet" href="/boubiroku/style.css">
+  <link rel="stylesheet" href="./assets/css/document.css">
+  <link rel="stylesheet" href="./assets/css/nav.css">
+  <link rel="stylesheet" href="./assets/css/article.css">
+  <link rel="stylesheet" href="./assets/css/markdown.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="../pageaction.js"></script>
+  <script src="./pageaction.js"></script>
 </head>
 <body>
   <nav>
-    <span><a href="/boubiroku/">
+    <span><a href="./">
       <span class="logo-1">た</span>
       <span class="logo-2">だ</span>
       <span class="logo-3">の</span>
@@ -20,9 +23,9 @@
     </a></span>
     <div class="margin-left-auto">
       <input type="text" placeholder="検索...">
-      <a href="/boubiroku/tags/">タグ一覧</a>
+      <a href="./tags/">タグ一覧</a>
       <a href="https://github.com/yuzupon1133/boubiroku/issues">ご意見・ご要望</a>
-      <a href="/boubiroku/create/" class="create">記事作成 <i class="fa-solid fa-pen"></i></a>
+      <!-- <a href="./create/" class="create">記事作成 <i class="fa-solid fa-pen"></i></a> -->
     </div>
   </nav>
   <div class="main" style="display: flex; justify-content: center;">
@@ -45,7 +48,7 @@
   <script>
     let locate_match = location.href.match(/^https:\/\/yuzupon1133\.github\.io\/boubiroku\/article\/(\d+)(?:[?#][^\/]*)?$/);
     if(locate_match) {
-      fetch("https://raw.githubusercontent.com/yuzupon1133/boubiroku/main/assets/article/" + locate_match[1])
+      fetch("./assets/article/" + locate_match[1] + ".json")
       .then(res => res.json())
       .then(res => {
         document.getElementById("article").innerHTML = marked.parse(res.raw);

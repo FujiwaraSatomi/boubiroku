@@ -1,0 +1,99 @@
+nav {
+  height: 60px;
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  box-shadow: gray 1px 1px;
+  user-select: none;
+  box-sizing: border-box;
+  transition: 0.1s;
+  top: 0;
+  padding: 0 25px;
+  z-index: 9999;
+}
+nav.onscroll {
+  box-shadow: gray 4px 4px 4px;
+}
+nav span a {
+  color: black;
+  font-size: 20px;
+  letter-spacing: -3.25px;
+  white-space: nowrap;
+}
+nav span a:hover {
+  border-bottom: none;
+}
+
+/* nav a {
+  text-decoration: none;
+  color: #734dff;
+  margin: 0 5px;
+}
+nav a:hover {
+  border-bottom: solid 2px #734dff;
+}
+nav a.create {
+  border: none;
+  background-color: #7db0ff;
+  margin: 0 5px;
+  color: white;
+  padding: 2px 10px;
+  transition: 0.2s;
+}
+nav a.create:hover {
+  background-color: #734dff;
+} */
+
+.logo-1, .logo-2, .logo-3, .logo-4, .logo-5, .logo-6 {
+  position: relative;
+}
+nav span a:hover .logo-1 {
+  animation: logo-anime ease 0.25s;
+}
+nav span a:hover .logo-2 {
+  animation: logo-anime ease 0.25s 0.1875s;
+}
+nav span a:hover .logo-3 {
+  animation: logo-anime ease 0.25s 0.375s;
+}
+nav span a:hover .logo-4 {
+  animation: logo-anime ease 0.5s 0.5625s;
+}
+nav span a:hover .logo-5 {
+  animation: logo-anime ease 0.25s 0.9375s;
+}
+nav span a:hover .logo-6 {
+  animation: logo-anime ease 0.5s 1.125s;
+}
+@keyframes logo-anime {
+  0% {
+    top: 0;
+  }
+  25% {
+    top: -5px;
+  }
+  75% {
+    top: -5px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .navbar-wide-width {
+    display: none
+  }
+  .navbar-narrow-width {
+    display: block !important;
+  }
+}
+.navbar-narrow-width {
+  display: none;
+}
+
+nav div input {
+  width: fit-content;
+}

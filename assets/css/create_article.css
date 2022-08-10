@@ -1,0 +1,133 @@
+.create-article h3 {
+  margin-top: 10px;
+}
+#detail-icon, #image-icon, #img-close {
+  height: 35px;
+  width: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  cursor: pointer;
+  border-radius: 3px;
+}
+#detail-icon:hover, #image-icon:hover, #img-close:hover {
+  background-color: #ddd;
+}
+#detail-icon:active, #image-icon:active, #img-close:active {
+  background-color: #bbb;
+}
+#create-detail {
+  user-select: none;
+}
+#create-detail hr {
+  margin: 15px -8px 15px 1px;
+}
+.image-upload_back {
+  background-color: rgba(0,0,0,0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+.image-upload {
+  background-color: white;
+  border-radius: 15px;
+  height: 400px;
+  width: 800px;
+  text-align: center;
+  position: relative;
+}
+.image-upload span {
+  font-size: 20px;
+}
+.image-upload input[type="text"] {
+  width: 650px;
+  height: 30px;
+  font-size: 15px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+.image-upload input[type="button"] {
+  width: 150px;
+  height: 35px;
+  margin-top: 10px;
+  border: none;
+  background-color: #7db0ff;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.image-upload input[type="button"]:hover {
+  background-color: #734dff;
+}
+.fa-spinner-third {
+  animation: spinner 0.8s infinite linear;
+  position: relative;
+  top: -28px;
+  left: 93px;
+}
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.image-upload div input[type="text"] {
+  width: 450px;
+  margin-top: 5px;
+}
+.image-upload div span {
+  font-size: 14px;
+}
+.image-upload_image {
+  width: 150px;
+  height: 126px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.image-upload_image img {
+  max-height: 100%;
+  max-width: 100%;
+}
+.image-upload_result {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -20px;
+}
+#img-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+}
+#article-submit {
+  width: 100px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #848484;
+  cursor: pointer;
+  background-color: #58ff4c;
+  transition: 0.3s;
+}
+#article-submit:hover {
+  background-color: #4ce041;
+  color: white;
+}

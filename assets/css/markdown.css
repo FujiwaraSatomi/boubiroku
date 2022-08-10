@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'Consolas';
+  src: url("https://yuzupon1133.github.io/boubiroku/assets/fonts/Consolas.ttf") format("ttf"),
+}
+#article h1, #article h2, #article h3, #article h4, #article h5, #article h6 {
+  font-weight: bold;
+  line-height: 1.5;
+  margin-top: 2.2rem;
+  margin-bottom: 1.4rem;
+}
+#article h1 {
+  font-size: 1.6em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.1em;
+}
+#article h2 {
+  font-size: 1.5em;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.1em;
+}
+#article h3 {
+  font-size: 1.4em;
+}
+#article h4 {
+  font-size: 1.2em;
+}
+#article h5, #article h6 {
+  font-size: 1em;
+}
+#article pre {
+  background-color: #364549;
+  color: white;
+  padding: 2em;
+  overflow-x: auto;
+  line-height: 24px;
+}
+#article code {
+  font-family: 'Consolas';
+  font-size: 14px;
+}
+#article :not(pre) code {
+  background-color: #eee;
+  padding: 0.1em 0.4em;
+  color: black;
+}
+#article a, #article a:visited {
+  text-decoration: none;
+  color: #734dff;
+  margin: 0 1px;
+} 
+#article a:hover {
+  text-decoration: underline;
+}
+#article blockquote {
+  border-left: 5px solid #ddd;
+  color: #777;
+  padding: 1em;
+  padding-right: 0;
+  margin: 1.5em 0 1.5em 20px;
+}
+#article img {
+  max-width: 100%;
+}
+#article dl * {
+  line-height: 30px;
+}
+#article dl dt {
+  font-weight: 600;
+}
+#article dd {
+  margin-inline-start: 2em;
+}
+#article p {
+  margin: 20px 0;
+}
+table, thead, tbody, tfoot, tr, th, td {
+  border: 1px solid grey;
+  border-collapse: collapse;
+  padding: 10px 15px;
+}
+#article input[type="checkbox"] {
+  width: 20px;
+}
+#article tr:nth-child(odd) {
+  background-color: #eee;
+}
+#article thead tr {
+  background-color: white !important;
+  text-align: center;
+}
+#article iframe {
+  max-width: 100%;
+}

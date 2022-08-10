@@ -1,0 +1,47 @@
+.main h3 {
+  margin: 0;
+  margin-bottom: 10px;
+}
+.main {
+  margin-top: 80px;
+  padding: 0 25px;
+}
+.main-box {
+  background-color: white;
+  padding: 20px;
+  margin-top: 30px;
+  box-sizing: border-box;
+  box-shadow: inset grey 1px 1px 1px;
+  width: calc(95vw - 350px);
+  min-width: 590px;
+}
+.main-box {
+  min-width: 590px;
+}
+.main-article {
+  min-height: 1000px;
+  width: 70vw;
+  background-color: white;
+  padding: 15px;
+}
+.main-article h2 {
+  margin: 0;
+  font-weight: normal;
+}
+.article-edit {
+  min-height: 900px;
+  width: 100%;
+  font-size: 18px;
+}
+.main-article h1 {
+  font-size: 28px;
+  line-height: 1.4;
+  margin-top: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.article-tag {
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+}

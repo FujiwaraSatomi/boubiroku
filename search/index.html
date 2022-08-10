@@ -3,9 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>ただの忘備録</title>
-  <link rel="stylesheet" href="/boubiroku/style.css">
+  <link rel="stylesheet" href="../assets/css/document.css">
+  <link rel="stylesheet" href="../assets/css/nav.css">
+  <link rel="stylesheet" href="../assets/css/article.css">
+  <link rel="stylesheet" href="../assets/css/markdown.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="../pageaction.js"></script>
   <script>
     param = (() => {
       if (1 < document.location.search.length) {
@@ -26,7 +30,7 @@
 </head>
 <body>
   <nav>
-    <span><a href="/boubiroku/">
+    <span><a href="../">
       <span class="logo-1">た</span>
       <span class="logo-2">だ</span>
       <span class="logo-3">の</span>
@@ -36,14 +40,14 @@
     </a></span>
     <div class="margin-left-auto">
       <input type="text" placeholder="検索...">
-      <a href="/boubiroku/tags/">タグ一覧</a>
+      <a href="../tags/">タグ一覧</a>
       <a href="https://github.com/yuzupon1133/boubiroku/issues">ご意見・ご要望</a>
-      <a href="/boubiroku/create/" class="create">記事作成 <i class="fa-solid fa-pen"></i></a>
+      <!-- <a href="../create/" class="create">記事作成 <i class="fa-solid fa-pen"></i></a> -->
     </div>
   </nav>
   <div class="main" style="display: flex;">
     <div class="main-article">
-      <h1 id="article-title">記事を読み込み中です...</h1>
+      <h1 id="article-title">検索中です...</h1>
       <div class="article-tag" id="article-tagicon" style="display: none">
         <i class="fa-solid fa-tag"></i>&nbsp;<span id="article-tag"></span>&nbsp;
         <i class="fa-solid fa-calendar"></i>&nbsp;<span id="article-date"></span>&nbsp;
@@ -74,7 +78,7 @@
     }
     if(param["q"]) {
       param["q"] = param["q"].replace("+", "");
-      fetch("https://raw.githubusercontent.com/yuzupon1133/boubiroku/main/assets/article_list")
+      fetch("../assets/article_list.json")
       .then(res => res.json())
       .then(res => {
         document.title = param["q"] + "の検索結果 | ただの忘備録";
