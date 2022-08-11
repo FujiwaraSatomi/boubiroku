@@ -28,8 +28,22 @@
       <!-- <a href="./create/" class="create">記事作成 <i class="fa-solid fa-pen"></i></a> -->
     </div>
     <div class="margin-left-auto navbar-narrow-width">
-      <div>
+      <div id="navbar-narrow-open-button" class="navbar-narrow-button">
         <i class="fa-solid fa-bars"></i>
+      </div>
+    </div>
+    <div id="nav-hamburger">
+      <div id="navbar-narrow-close-button" class="navbar-narrow-button">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div>
+        <input type="text" placeholder="検索...">
+      </div>
+      <div>
+        <a href="./tags/">タグ一覧</a>
+      </div>
+      <div>
+        <a href="https://github.com/yuzupon1133/boubiroku/issues">ご意見・ご要望</a>
       </div>
     </div>
   </nav>
@@ -45,7 +59,7 @@
     </div>
     <div class="main-box">
       <h3>記事一覧</h3>
-      <div id="article_list"></div>
+      <div id="article_list">読み込み中...</div>
     </div>
     <script>
       fetch("./assets/article_list.json")
@@ -59,6 +73,9 @@
           article_list.append(doc);
           article_list.append(document.createElement("br"));
         }
+      })
+      .catch(e => {
+        document.getElementById("article_list").innerHTML = "おっと！何か問題が発生したようです。";
       })
     </script>
   </div>

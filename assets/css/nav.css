@@ -16,6 +16,9 @@ nav {
 nav.onscroll {
   box-shadow: gray 4px 4px 4px;
 }
+nav a {
+  text-decoration: none;
+}
 nav span a {
   color: black;
   font-size: 20px;
@@ -84,7 +87,7 @@ nav span a:hover .logo-6 {
 
 @media (max-width: 640px) {
   .navbar-wide-width {
-    display: none
+    display: none;
   }
   .navbar-narrow-width {
     display: block !important;
@@ -96,4 +99,50 @@ nav span a:hover .logo-6 {
 
 nav div input {
   width: fit-content;
+}
+@media (min-width: 641px) {
+  .navbar-narrow-button, #nav-hamburger, #nav-hamburger * {
+    display: none !important;
+  }
+}
+.navbar-narrow-button {
+  padding: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 3px;
+  height: 24px;
+  width: 24px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-narrow-button:hover {
+  background-color: #ddd;
+}
+.navbar-narrow-button:active {
+  background-color: #ccc;
+}
+#nav-hamburger {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  height: 100vh;
+  background-color: white;
+  border-left: 1px solid grey;
+  padding: 15px;
+  z-index: 999;
+}
+#nav-hamburger.open {
+  display: block;
+  width: 200px;
+}
+#nav-hamburger * {
+  display: none;
+}
+#nav-hamburger.open * {
+  display: block;
+}
+#nav-hamburger > div {
+  margin-bottom: 10px;
 }

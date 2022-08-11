@@ -15,8 +15,11 @@
   width: calc(95vw - 350px);
   min-width: 590px;
 }
-.main-box {
-  min-width: 590px;
+@media (max-width: 640px) {
+  .main-box {
+    min-width: 0px;
+    width: 100%;
+  }
 }
 .main-article {
   min-height: 1000px;

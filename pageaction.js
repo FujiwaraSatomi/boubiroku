@@ -28,5 +28,10 @@ document.addEventListener("DOMContentLoaded", () => {
       nav.classList.add("onscroll");
     }
   });
-  
+  document.getElementById("navbar-narrow-open-button").addEventListener("click", () => {
+    document.getElementById("nav-hamburger").classList.add("open");
+  });
+  document.getElementById("navbar-narrow-close-button").addEventListener("click", () => {
+    document.getElementById("nav-hamburger").classList.remove("open");
+  })
 });
