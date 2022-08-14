@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>ただの忘備録</title>
-  <link rel="stylesheet" href="./assets/css/document.css">
-  <link rel="stylesheet" href="./assets/css/nav.css">
-  <link rel="stylesheet" href="./assets/css/article.css">
-  <link rel="stylesheet" href="./assets/css/markdown.css">
+  <link rel="stylesheet" href="/boubiroku/assets/css/document.css">
+  <link rel="stylesheet" href="/boubiroku/assets/css/nav.css">
+  <link rel="stylesheet" href="/boubiroku/assets/css/article.css">
+  <link rel="stylesheet" href="/boubiroku/assets/css/markdown.css">
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="./pageaction.js"></script>
+  <script src="/boubiroku/pageaction.js"></script>
 </head>
 <body>
   <nav>
@@ -66,6 +66,7 @@
       .then(res => res.json())
       .then(res => {
         let article_list = document.getElementById("article_list");
+        article_list.innerHTML = "";
         for(let i = 0; i < res.length; i++) {
           let doc = document.createElement("a");
           doc.setAttribute("href", "./article/" + res[i].id);

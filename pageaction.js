@@ -1,9 +1,3 @@
-const throw404 = () => {
-  document.getElementById("article-title").innerHTML = "お探しのページは見つかりませんでした。";
-  document.getElementById("article").innerHTML = "";
-  document.getElementById("article-tagicon").style.display = "none";
-  document.title = "ページが見つかりません | ただの忘備録";
-}
 const param = (() => {
   if (1 < document.location.search.length) {
     var parameters = document.location.search.substring(1).split('&');
@@ -16,10 +10,12 @@ const param = (() => {
   }
   return null;
 })();
-
+const unix2date = (unix, time) => {
+  let unixtime = new Date(unix * 1000);
+  return "" + unixtime.toLocaleDateString() + (time ? " " + unixtime.toLocaleTimeString() : "");
+}
 
 document.addEventListener("DOMContentLoaded", () => {
-  
   document.addEventListener("scroll", () => {
     var nav = document.getElementsByTagName("nav")[0];
     if(window.scrollY <= 10) {

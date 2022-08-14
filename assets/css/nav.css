@@ -17,7 +17,14 @@ nav.onscroll {
   box-shadow: gray 4px 4px 4px;
 }
 nav a {
+  color: black;
   text-decoration: none;
+}
+nav > div > a {
+  font-size: 14px;
+}
+nav > div > a:hover {
+  text-decoration: underline;
 }
 nav span a {
   color: black;
@@ -52,23 +59,25 @@ nav a.create:hover {
 .logo-1, .logo-2, .logo-3, .logo-4, .logo-5, .logo-6 {
   position: relative;
 }
-nav span a:hover .logo-1 {
-  animation: logo-anime ease 0.25s;
-}
-nav span a:hover .logo-2 {
-  animation: logo-anime ease 0.25s 0.1875s;
-}
-nav span a:hover .logo-3 {
-  animation: logo-anime ease 0.25s 0.375s;
-}
-nav span a:hover .logo-4 {
-  animation: logo-anime ease 0.5s 0.5625s;
-}
-nav span a:hover .logo-5 {
-  animation: logo-anime ease 0.25s 0.9375s;
-}
-nav span a:hover .logo-6 {
-  animation: logo-anime ease 0.5s 1.125s;
+@media (min-width: 641px) {
+  nav span a:hover .logo-1 {
+    animation: logo-anime ease 0.25s;
+  }
+  nav span a:hover .logo-2 {
+    animation: logo-anime ease 0.25s 0.1875s;
+  }
+  nav span a:hover .logo-3 {
+    animation: logo-anime ease 0.25s 0.375s;
+  }
+  nav span a:hover .logo-4 {
+    animation: logo-anime ease 0.5s 0.5625s;
+  }
+  nav span a:hover .logo-5 {
+    animation: logo-anime ease 0.25s 0.9375s;
+  }
+  nav span a:hover .logo-6 {
+    animation: logo-anime ease 0.5s 1.125s;
+  }
 }
 @keyframes logo-anime {
   0% {

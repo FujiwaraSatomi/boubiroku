@@ -1,7 +1,9 @@
 body {
   background-color: #fcfde7;
   margin: 0;
+  overflow-x: hidden;
 }
+
 input {
   width: 100%;
 }
@@ -15,6 +17,11 @@ center {
 }
 .display-none {
   display: none;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
 
 footer {
