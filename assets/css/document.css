@@ -31,3 +31,35 @@ footer {
 deepl-inline-trigger {
   display: none;
 }
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 0px;
+  user-select: none;
+  position: absolute;
+  pointer-events: none;
+}
+.title-triangle {
+  width: 15px;
+  height: 15px;
+  transform: rotate(45deg);
+  background-color: black;
+  position: relative;
+  top: 10px;
+  z-index: 5;
+  border: 1px solid white;
+}
+.title-value {
+  color: white;
+  background-color: black;
+  width: fit-content;
+  z-index: 6;
+  font-size: 12px;
+  padding: 2px 5px;
+  border-radius: 5px;
+  white-space: nowrap;
+  border: 1px solid white;
+  box-shadow: 1px 1px 3px grey;
+}
