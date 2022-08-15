@@ -38,6 +38,10 @@ const hide_title = (e) => {
   }
 }
 
+const search = () => {
+  location.href = "/boubiroku/search/?q=" + encodeURIComponent(document.getElementById("search").value);
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("scroll", () => {
     var nav = document.getElementsByTagName("nav")[0];

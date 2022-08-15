@@ -10,7 +10,10 @@ nav.innerHTML = `
   <span class="logo-6">録</span>
 </a></span>
 <div class="margin-left-auto navbar-wide-width">
-  <input type="text" placeholder="検索...">
+  <div class="search">
+    <input type="text" placeholder="検索..." id="search">
+    <i class="fa-solid fa-magnifying-glass" style="cursor: pointer" onclick="search()"></i>
+  </div>
   <a href="/boubiroku/tags/">タグ一覧</a>
   <a href="https://github.com/yuzupon1133/boubiroku/issues">ご意見・ご要望</a>
   <!-- <a href="/boubiroku/create/" class="create">記事作成 <i class="fa-solid fa-pen"></i></a> -->

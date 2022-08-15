@@ -100,7 +100,13 @@ nav a.create:hover {
     top: 0;
   }
 }
-
+.navbar-wide-width {
+  display: flex;
+  align-items: center;
+}
+.navbar-wide-width a {
+  margin-right: 10px;
+}
 @media (max-width: 640px) {
   .navbar-wide-width {
     display: none;
@@ -112,9 +118,16 @@ nav a.create:hover {
 .navbar-narrow-width {
   display: none;
 }
-
-nav div input {
+.search {
+  border: solid 1px black;
+  border-radius: 3px;
+  padding: 0 5px;
+  margin: 0 10px;
+}
+.search input {
   width: fit-content;
+  border: none;
+  outline: none;
 }
 @media (min-width: 641px) {
   .navbar-narrow-button, #nav-hamburger, #nav-hamburger * {

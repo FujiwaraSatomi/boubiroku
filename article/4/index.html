@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title id="title"></title>
+    <link rel="stylesheet" href="/boubiroku/assets/css/document.css">
+    <link rel="stylesheet" href="/boubiroku/assets/css/nav.css">
+    <link rel="stylesheet" href="/boubiroku/assets/css/article.css">
+    <link rel="stylesheet" href="/boubiroku/assets/css/markdown.css">
+    <script src="../article.js"></script>
+    <script src="/boubiroku/pageaction.js"></script>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <data style="display: none;" id="data">
+      {"title":"自作ツール「フォローされているか確認」公開","tag":"osu!","subtag":"JavaScript Tampermonkey","createtime":1657470871,"edittime":1657470871,"raw":"# まえがき\n\n先日、「フォローされているか確認」のユーザースクリプトを公開しました。  \n&lt;img src=\"https:\/\/api-boubiroku.yuzupon1133.repl.co\/?type=image&hash=02c6a6742ee935a233756c8ca7e5cc88\" height=\"100\"&gt;  \nスクリプトを適用すると、画像のように、フォローされていると国名の右に「フォローされています」と表示されます。  \nスクリプトは[ここ](http:\/\/osu.yuzupon1133.repl.co\/followcheck.user.js)にあります。**※[Tampermonkey](https:\/\/chrome.google.com\/webstore\/detail\/tampermonkey\/dhdgffkkebhmkfjojejmpbldmpobfkfo)必須です。**\n\n# どういう仕組み？\n\nいくら探してもフォローされている人全員を取得できるAPIはなかったので、古典的な方法で実現してみました。\n\n&lt;img src=\"https:\/\/api-boubiroku.yuzupon1133.repl.co\/?type=image&hash=2a059c93f83dc28d8eef016afcd5be6c\" height=\"60\"&gt;&lt;br&gt;\nこれです。  \nこれを応用すれば相手からフォローされているのか分かるのです。\n\nネットワークログを見た限り、フレンド追加のAPIは\n```\n[POST]\nhttps:\/\/osu.ppy.sh\/home\/friends?target=ユーザーID\n```\nフレンドを削除するAPIは\n```\n[DELETE]\nhttps:\/\/osu.ppy.sh\/home\/friends\/ユーザーID\n```\nで、レスポンスが\n```\n[\n  {\n    \"target_id\": ユーザーID,\n    \"relation_type\": \"friend\",\n    \"mutual\": true\n  }, {...} ...\n]\n```\nとなっていて、`mutual`の値を見ることで相互かわかるようになっている。\nということは、フレンド追加されていない場合は**フレンド追加→`mutual`の値を見る→mutualがtrueなら「フォローされています」を表示する→フレンド削除**を裏でやることで、実現している。\n\nちなみに、すでにフレンドになっている場合は  \n&lt;img src=\"https:\/\/api-boubiroku.yuzupon1133.repl.co\/?type=image&hash=2a059c93f83dc28d8eef016afcd5be6c\" height=\"60\"&gt;&lt;br&gt;\nの要素のクラス名を取得して（相互だったら`user-action-button--mutual`が、一方的なフレンドは`user-action-button--friend`が適用されている）判定している。\n\n# 裏技\n\nフレンド追加のAPIを応用して\n```\nfetch(\"https://osu.ppy.sh/home/friends?target=自分のユーザーID\", {\n  method: \"POST\",\n  headers: {\n    \"x-requested-with\": \"XMLHttpRequest\",\n    \"x-csrf-token\": document.cookie.replace(\/.*XSRF-TOKEN=(.*?);?\/, \"$1\")\n  }\n})\n```\nを実行することで自分自身と相互になれる。"}
+    </data>
+  </head>
+  <body>
+    <nav><noscript>すべての機能を利用するには、JavaScriptを有効にしてください。<a href="/boubiroku">トップに戻る</a></noscript><script src="/boubiroku/nav.js"></script></nav>
+  </body>
+</html>
