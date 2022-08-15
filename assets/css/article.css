@@ -21,6 +21,10 @@
 .main a:active {
   color: red;
 }
+.main-flex {
+  display: flex;
+  justify-content: center;
+}
 .main-box {
   background-color: white;
   padding: 20px;

@@ -36,6 +36,13 @@ nav span a:hover {
   border-bottom: none;
 }
 
+nav noscript a {
+  color: blue;
+}
+nav noscript a:hover {
+  text-decoration: underline;
+}
+
 /* nav a {
   text-decoration: none;
   color: #734dff;

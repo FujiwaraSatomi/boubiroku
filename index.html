@@ -12,7 +12,7 @@
   <script src="/boubiroku/pageaction.js"></script>
 </head>
 <body>
-  <nav><script src="/boubiroku/nav.js"></script></nav>
+  <nav><noscript>すべての機能を利用するには、JavaScriptを有効にしてください。</noscript><script src="/boubiroku/nav.js"></script></nav>
   <div class="main">
     <div class="main-box">
       <h3>概要</h3>
@@ -25,7 +25,9 @@
     </div>
     <div class="main-box">
       <h3>記事一覧</h3>
-      <div id="article_list">読み込み中...</div>
+      <div id="article_list" style="display: none">読み込み中...</div>
+      <script>document.getElementById("article_list").style.display = "block";</script>
+      <noscript>記事を取得するには、JavaScriptを有効にしてください。</noscript>
     </div>
     <script>
       fetch("./assets/article_list.json")
