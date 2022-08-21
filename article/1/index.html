@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title id="title"></title>
     <link rel="stylesheet" href="/boubiroku/assets/css/document.css">
     <link rel="stylesheet" href="/boubiroku/assets/css/nav.css">
@@ -11,7 +12,7 @@
     <script src="/boubiroku/pageaction.js"></script>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <data style="display: none;" id="data">
+    <data id="data">
       {"title":"無料でPro版のsvgアイコンを使用する方法","tag":"Fontawesome","createtime":"1656689272","edittime":"1656689272","raw":"# まえがき\n\nとあるFontawesomeのアイコンを使用しようとしたが、Free版のkitだと該当フォントが読み込まれていなくて文字化けする。例えば &lt;i class=\"fa-solid fa-play-pause\"&gt;&lt;\/i&gt; &lt;i class=\"fa-solid fa-face-confused\"&gt;&lt;\/i&gt; とか。\n\n\nFontawesomeの公式サイトを見ているとふと疑問が浮かんだ。  \n**なぜFontawesomeの公式サイトはPro版のアイコンが使えているのか**と。  \n私は気になってネットワークログを調べてみた。\nするとページ読み込み時にpro版のcssがフォントと一緒に読み込まれていることが分かった。\n\n# 結論\n\n下のコードをheadタグ内に配置すればPro版のアイコンが使えるようになる。\n```\n&lt;link rel=\"stylesheet\" href=\"https:\/\/site-assets.fontawesome.com\/releases\/v6.1.1\/css\/all.css\"&gt;\n```\n\nただし、これを追加するときは\n```\n&lt;script src=\"https:\/\/kit-fontawesome.com\/**********.js\"&gt;&lt;\/script&gt;\n```\nを削除すること。"}
     </data>
   </head>

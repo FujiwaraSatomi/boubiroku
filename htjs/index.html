@@ -1,0 +1,17 @@
+<textarea id="input"></textarea>
+<textarea id="output"></textarea>
+<script>
+  const input = document.getElementById("input");
+  const output = document.getElementById("output");
+  input.addEventListener("input", () => {
+    try {
+      let input_arr = input.value.split("\n");
+      for(let i = 0; i < input_arr.length; i++) {
+        input_arr[i] = input_arr[i].replace(/^ *(.*)$/, "$1");
+      }
+      output.value = input_arr.join("\n").replaceAll("&", "&amp;").replaceAll("\n", " ").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    } catch(e) {
+      output.value = e;
+    }
+  });
+</script>
