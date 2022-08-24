@@ -33,7 +33,6 @@ data {
   padding: 20px;
   margin-top: 30px;
   box-sizing: border-box;
-  box-shadow: inset grey 1px 1px 1px;
   width: calc(95vw - 350px);
   min-width: 590px;
 }
